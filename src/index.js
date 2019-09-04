@@ -111,7 +111,7 @@ function handleAction (getState: Function, next: Function, action: Object, optio
 function getFields (type: string, fields: Object, actionType: string) {
   const typeFieldHandlers = {
     [EventTypes.identify]: extractIdentifyFields,
-    [EventTypes.page]: extractPageFields,
+    [EventTypes.screen]: extractPageFields,
     [EventTypes.track]: eventFields => extractTrackFields(eventFields, actionType),
     [EventTypes.alias]: extractAliasFields,
     [EventTypes.group]: extractGroupFields,
