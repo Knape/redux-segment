@@ -61,7 +61,6 @@ node_modules
 
 # Project build
 .vscode/
-dist/
 redux-segment.js
 
 # Webstorm
@@ -69,4 +68,3 @@ redux-segment.js
 
 # Notes
 *.txt
-
