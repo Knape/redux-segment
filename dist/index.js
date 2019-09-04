@@ -25,6 +25,8 @@ var _alias = require('./event/alias');
 
 var _group = require('./event/group');
 
+var _screen = require('./event/screen');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -148,7 +150,7 @@ function handleAction(getState, next, action, options) {
 function getFields(type, fields, actionType) {
   var _typeFieldHandlers;
 
-  var typeFieldHandlers = (_typeFieldHandlers = {}, _defineProperty(_typeFieldHandlers, _types2.default.identify || _types2.default.identifyWithTraits, _identify.extractIdentifyFields), _defineProperty(_typeFieldHandlers, _types2.default.page, _page.extractPageFields), _defineProperty(_typeFieldHandlers, _types2.default.screen || _types2.default.screenWithProperties, extractScreenFields), _defineProperty(_typeFieldHandlers, _types2.default.track || _types2.default.trackWithProperties, function (eventFields) {
+  var typeFieldHandlers = (_typeFieldHandlers = {}, _defineProperty(_typeFieldHandlers, _types2.default.identify || _types2.default.identifyWithTraits, _identify.extractIdentifyFields), _defineProperty(_typeFieldHandlers, _types2.default.page, _page.extractPageFields), _defineProperty(_typeFieldHandlers, _types2.default.screen || _types2.default.screenWithProperties, _screen.extractScreenFields), _defineProperty(_typeFieldHandlers, _types2.default.track || _types2.default.trackWithProperties, function (eventFields) {
     return (0, _track.extractTrackFields)(eventFields, actionType);
   }), _defineProperty(_typeFieldHandlers, _types2.default.alias, _alias.extractAliasFields), _defineProperty(_typeFieldHandlers, _types2.default.group, _group.extractGroupFields), _defineProperty(_typeFieldHandlers, _types2.default.reset, function () {
     return [];

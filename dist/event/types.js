@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 var EventTypes = {
   identify: "identify",
   screen: "screen",
+  page: "page",
   track: "track",
   alias: "alias",
   group: "group",
