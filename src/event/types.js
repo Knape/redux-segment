@@ -1,9 +1,9 @@
 const EventTypes = {
-  identify: 'identify',
-  page: 'page',
-  track: 'track',
+  identify: 'identifyWithTraits',
+  screen: 'screenWithProperties',
+  track: 'trackWithProperties',
   alias: 'alias',
-  group: 'group',
+  group: 'groupWithTraits',
   reset: 'reset'
 }
 
