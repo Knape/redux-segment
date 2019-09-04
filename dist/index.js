@@ -150,7 +150,9 @@ function handleAction(getState, next, action, options) {
 function getFields(type, fields, actionType) {
   var _typeFieldHandlers;
 
-  var typeFieldHandlers = (_typeFieldHandlers = {}, _defineProperty(_typeFieldHandlers, _types2.default.identify || _types2.default.identifyWithTraits, _identify.extractIdentifyFields), _defineProperty(_typeFieldHandlers, _types2.default.page, _page.extractPageFields), _defineProperty(_typeFieldHandlers, _types2.default.screen || _types2.default.screenWithProperties, _screen.extractScreenFields), _defineProperty(_typeFieldHandlers, _types2.default.track || _types2.default.trackWithProperties, function (eventFields) {
+  var typeFieldHandlers = (_typeFieldHandlers = {}, _defineProperty(_typeFieldHandlers, _types2.default.identify, _identify.extractIdentifyFields), _defineProperty(_typeFieldHandlers, _types2.default.identifyWithTraits, _identify.extractIdentifyFields), _defineProperty(_typeFieldHandlers, _types2.default.page, _page.extractPageFields), _defineProperty(_typeFieldHandlers, _types2.default.screen, _screen.extractScreenFields), _defineProperty(_typeFieldHandlers, _types2.default.screenWithProperties, _screen.extractScreenFields), _defineProperty(_typeFieldHandlers, _types2.default.track, function (eventFields) {
+    return (0, _track.extractTrackFields)(eventFields, actionType);
+  }), _defineProperty(_typeFieldHandlers, _types2.default.trackWithProperties, function (eventFields) {
     return (0, _track.extractTrackFields)(eventFields, actionType);
   }), _defineProperty(_typeFieldHandlers, _types2.default.alias, _alias.extractAliasFields), _defineProperty(_typeFieldHandlers, _types2.default.group, _group.extractGroupFields), _defineProperty(_typeFieldHandlers, _types2.default.reset, function () {
     return [];
