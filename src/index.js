@@ -6,6 +6,7 @@ import { extractPageFields } from './event/page'
 import { extractTrackFields } from './event/track'
 import { extractAliasFields } from './event/alias'
 import { extractGroupFields } from './event/group'
+import { extractScreenFields } from './event/screen'
 
 function emit (type: string, fields: Array, { client }: Object) {
   const currentClient = client()
@@ -110,9 +111,10 @@ function handleAction (getState: Function, next: Function, action: Object, optio
 
 function getFields (type: string, fields: Object, actionType: string) {
   const typeFieldHandlers = {
-    [EventTypes.identify]: extractIdentifyFields,
-    [EventTypes.screen]: extractPageFields,
-    [EventTypes.track]: eventFields => extractTrackFields(eventFields, actionType),
+    [EventTypes.identify || EventTypes.identifyWithTraits]: extractIdentifyFields,
+    [EventTypes.page]: extractPageFields,
+    [EventTypes.screen || EventTypes.screenWithProperties]: extractScreenFields,
+    [EventTypes.track||  EventTypes.trackWithProperties]: eventFields => extractTrackFields(eventFields, actionType),
     [EventTypes.alias]: extractAliasFields,
     [EventTypes.group]: extractGroupFields,
     [EventTypes.reset]: () => []
